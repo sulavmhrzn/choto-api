@@ -1,4 +1,5 @@
 import structlog
+from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
@@ -52,12 +53,13 @@ class APIRootAPIView(APIView):
     permission_classes = [AllowAny]
     renderer_classes = [StructuredJSONRenderer, TemplateHTMLRenderer]
 
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponse:
         data = {
             "name": "Choto API",
             "version": "v1",
             "status": "ok",
             "endpoints": {
+                "Docs": request.build_absolute_uri(reverse("swagger-ui")),
                 "Health": request.build_absolute_uri(reverse("core:health-live")),
                 "Auth": request.build_absolute_uri(reverse("token_obtain_pair")),
                 "Short links": request.build_absolute_uri(reverse("links:list-create")),
