@@ -70,6 +70,18 @@ class APIRootAPIView(APIView):
                     reverse("webhooks:endpoint-list-create")
                 ),
             },
+            "repo_url": "https://github.com/sulavmhrzn/choto-dj-backend",
+            "stack": [
+                "Django",
+                "Django REST Framework",
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "Docker",
+                "Stripe",
+                "drf-spectacular",
+                "Prometheus/Grafana",
+            ],
         }
 
         if isinstance(request.accepted_renderer, TemplateHTMLRenderer):
