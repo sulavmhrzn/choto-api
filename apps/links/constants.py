@@ -3,6 +3,7 @@ MAX_SHORT_CODE_LENGTH = 50
 
 RESERVED_SHORT_CODES = {
     "admin",
+    "admin-tipbba",
     "api",
     "auth",
     "accounts",

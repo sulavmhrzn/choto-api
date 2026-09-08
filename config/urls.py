@@ -9,7 +9,7 @@ from apps.accounts.views import CustomTokenObtainPairAPIView, CustomTokenRefresh
 from apps.links.views import ShortLinkRedirectAPIView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin-tipbba/", admin.site.urls),
     path("", include("apps.core.urls")),
     path("prometheus/", include("django_prometheus.urls")),
     path("api/v1/accounts/", include("apps.accounts.urls")),
